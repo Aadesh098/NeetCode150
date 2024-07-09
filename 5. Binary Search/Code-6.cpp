@@ -14,18 +14,17 @@ unordered_map<string, vector<pair<int, string>>> m;
         }
         int start = 0;
         int end = m[key].size() - 1;
+        string ans = "" ;
         while (start <= end) {
             int mid = start + (end - start) / 2;
-            if (m[key][mid].first < timestamp) {
+            if(m[key][mid].first == timestamp){
+                return m[key][mid].second ;
+            }else if (m[key][mid].first < timestamp) {
+                ans = m[key][mid].second;
                 start = mid + 1;
-            } else if (m[key][mid].first > timestamp) {
+            } else{
                 end = mid - 1;
-            } else {
-                return m[key][mid].second;
             }
         }
-        if (end >= 0) {
-            return m[key][end].second;
-        }
-        return "";
+        return ans;
     }

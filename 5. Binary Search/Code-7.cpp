@@ -8,11 +8,11 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
             return findMedianSortedArrays(nums2, nums1);
         }
         int total = m + n;
-        int low = 0;
-        int high = m;
+        int start = 0;
+        int end = m;
         double result = 0.0;
-        while (low <= high) {
-            int i = low + (high - low) / 2;
+        while (start <= end) {
+            int i = start + (end - start) / 2;
             int j = (total + 1) / 2 - i;            
             int left1 = (i > 0) ? nums1[i - 1] : INT_MIN;
             int right1 = (i < m) ? nums1[i] : INT_MAX;
@@ -26,9 +26,9 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
                 }
                 break;
             } else if (left1 > right2) {
-                high = i - 1;
+                end = i - 1;
             } else {
-                low = i + 1;
+                start = i + 1;
             }
         }
         return result;
