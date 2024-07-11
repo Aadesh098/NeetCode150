@@ -10,7 +10,7 @@ vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
         while (k--){
             vector<int> el = pq.top();
             pq.pop();
-            res.push_back({el[1], el[2]});
+            ans.push_back({el[1], el[2]});
         }
         return ans;
     }
