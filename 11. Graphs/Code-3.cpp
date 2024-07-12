@@ -1,6 +1,24 @@
 // Clone a Graph
 // https://leetcode.com/problems/clone-graph/
 
+// class Solution {
+// public:
+//     unordered_map<Node*, Node*> m;
+//     Node* cloneGraph(Node* node) {
+//         if (node == NULL) {
+//             return NULL;
+//         } 
+//         if (m.find(node) == m.end()) {
+//             m[node] = new Node(node->val);
+//             for (int i = 0; i < node->neighbors.size(); i++) {
+//                 Node* neighbor = node->neighbors[i];
+//                 m[node]->neighbors.push_back(cloneGraph(neighbor));
+//             }
+//         }
+//         return m[node];
+//     }
+// };
+
 unordered_map<Node*, Node*> m;
     Node* cloneGraph(Node* node) {
         if (node == NULL) {
