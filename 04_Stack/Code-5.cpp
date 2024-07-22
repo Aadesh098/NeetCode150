@@ -2,9 +2,9 @@
 // https://leetcode.com/problems/daily-temperatures/description/
 
 vector<int> dailyTemperatures(vector<int>& temperatures) {
-        int n = temperatures.size();        
+        int n = temperatures.size();
         stack<pair<int, int>> stk;
-        vector<int> result(n);
+        vector<int> ans(n);
         for (int i = 0; i < n; i++) {
             int currDay = i;
             int currTemp = temperatures[i];
@@ -12,9 +12,9 @@ vector<int> dailyTemperatures(vector<int>& temperatures) {
                 int prevDay = stk.top().first;
                 int prevTemp = stk.top().second;
                 stk.pop();
-                result[prevDay] = currDay - prevDay;
+                ans[prevDay] = currDay - prevDay;
             }
             stk.push({currDay, currTemp});
         }
-        return result;
+        return ans;
     }

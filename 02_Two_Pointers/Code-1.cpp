@@ -2,19 +2,19 @@
 // https://leetcode.com/problems/valid-palindrome/
 
 bool isPalindrome(string s) {
-        int i = 0;
-        int j = s.size() - 1;
+        int i = 0 ;
+        int j = s.size()-1 ;
         while(i<j){
             if(!isalnum(s[i])){
-                i++ ;
+                i++;
             }else if(!isalnum(s[j])){
                 j-- ;
             }else if(tolower(s[i]) != tolower(s[j])){
-                return false;
+                return false ;
             }else{
                 i++ ;
                 j-- ;
             }
         }
-        return true;
+        return true ;
     }

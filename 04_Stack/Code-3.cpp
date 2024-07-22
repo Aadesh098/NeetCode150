@@ -4,11 +4,11 @@
 int evalRPN(vector<string>& tokens) {
         stack<int> stk;
         for (int i = 0; i < tokens.size(); i++) {
-            string token = tokens[i];   
+            string token = tokens[i];
             if (token.size() > 1 || isdigit(token[0])) {
                 stk.push(stoi(token));
                 continue;
-            }  
+            }
             int num2 = stk.top();
             stk.pop();
             int num1 = stk.top();

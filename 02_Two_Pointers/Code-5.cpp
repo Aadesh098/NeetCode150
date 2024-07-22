@@ -6,17 +6,17 @@ int trap(vector<int>& height) {
         int j = height.size() - 1;
         int maxLeft = height[i];
         int maxRight = height[j];
-        int result = 0;
+        int ans = 0;
         while (i < j) {
             if (maxLeft <= maxRight) {
                 i++;
-                maxLeft = max(maxLeft, height[i]);
-                result += maxLeft - height[i];
+                maxLeft = max(height[i], maxLeft);
+                ans += maxLeft - height[i];
             } else {
                 j--;
-                maxRight = max(maxRight, height[j]);
-                result += maxRight - height[j];
+                maxRight = max(height[j], maxRight);
+                ans += maxRight - height[j];
             }
         }
-        return result;
+        return ans;
     }

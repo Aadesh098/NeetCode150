@@ -3,7 +3,7 @@
 
 vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         deque<int> dq;
-        vector<int> result;
+        vector<int> ans;
         int i = 0;
         int j = 0;
         while (j < nums.size()) {
@@ -15,10 +15,10 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
                 dq.pop_front();
             }   
             if (j + 1 >= k) {
-                result.push_back(nums[dq.front()]);
+                ans.push_back(nums[dq.front()]);
                 i++;
             }
             j++;
         }
-        return result;
+        return ans;
     }

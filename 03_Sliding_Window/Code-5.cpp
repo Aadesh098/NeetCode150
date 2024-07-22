@@ -2,9 +2,9 @@
 // https://leetcode.com/problems/minimum-window-substring/description/
 
 string minWindow(string s, string t) {
-        unordered_map<char, int> m;
+        unordered_map<char, int> check;
         for (int i = 0; i < t.size(); i++) {
-            m[t[i]]++;
+            check[t[i]]++;
         }        
         int i = 0;
         int j = 0;
@@ -12,18 +12,18 @@ string minWindow(string s, string t) {
         int minStart = 0;
         int minLength = INT_MAX;
         while (j < s.size()){
-            if (m[s[j]] > 0) {
+            if (check[s[j]] > 0) {
                 counter--;
             }
-            m[s[j]]--;
+            check[s[j]]--;
             j++;
             while (counter == 0) {
                 if (j - i < minLength) {
                     minStart = i;
                     minLength = j - i;
                 }
-                m[s[i]]++;
-                if (m[s[i]] > 0) {
+                check[s[i]]++;
+                if (check[s[i]] > 0) {
                     counter++;
                 }
                 i++;

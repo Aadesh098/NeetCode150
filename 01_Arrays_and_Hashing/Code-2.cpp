@@ -7,11 +7,11 @@ bool isAnagram(string s, string t) {
         }
         unordered_map<char,int> smap ;
         unordered_map<char,int> tmap ;
-        for(int i = 0 ; i<s.length() ; i++){
+        for(int i = 0 ; i<s.size() ; i++){
             smap[s[i]]++ ;
             tmap[t[i]]++ ;
         }
-        for(auto &pair : smap){
+        for(auto& pair : smap){
             if(pair.second != tmap[pair.first]){
                 return false ;
             }

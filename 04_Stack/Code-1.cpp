@@ -9,9 +9,9 @@ bool isValid(string s) {
             } else {
                 if (ans.top() == '(' && s[i] == ')') {
                     ans.pop();
-                } else if (ans.top() == '{' && s[i] == '}') {
-                    ans.pop();
                 } else if (ans.top() == '[' && s[i] == ']') {
+                    ans.pop();
+                } else if (ans.top() == '{' && s[i] == '}') {
                     ans.pop();
                 } else {
                     ans.push(s[i]);

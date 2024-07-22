@@ -6,13 +6,13 @@ vector<int> twoSum(vector<int>& numbers, int target) {
         int j = numbers.size() - 1;
         while (i < j) {
             int sum = numbers[i] + numbers[j];
-            if (sum < target) {
-                i++;
+            if (sum == target) {
+                return {i + 1, j + 1};
             } else if (sum > target) {
                 j--;
             } else {
-                return {i + 1 , j + 1};
+                i++;
             }
         }
-        return {-1 , -1};
+        return {-1, -1};
     }

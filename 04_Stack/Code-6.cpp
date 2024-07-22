@@ -10,13 +10,13 @@ int carFleet(int target, vector<int>& position, vector<int>& speed) {
         }
         sort(cars.begin(), cars.end());
         double maxTime = 0.0;
-        int result = 0;
+        int ans = 0;
         for (int i = n - 1; i >= 0; i--) {
             double time = cars[i].second;
             if (time > maxTime) {
                 maxTime = time;
-                result++;
+                ans++;
             }
         }
-        return result;
+        return ans;
     }
