@@ -1,6 +1,12 @@
 // Merge Two Sorted Lists
 // https://leetcode.com/problems/merge-two-sorted-lists/description/
 
+// Algorithm 
+// 1. If both lists are null -> return null 
+// 2. If any of the list is null -> return the other list
+// 3. Create 2 variables dummy to store the start of the merged linked list & curr=head to traverse the list
+// 4. Initiate loop till (list1 != NULL && list2 != NULL)
+
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         if (list1 == NULL && list2 == NULL) {
             return NULL;
