@@ -1,15 +1,6 @@
 // Time Based Key-Value Store
 // https://leetcode.com/problems/time-based-key-value-store/
 
-// Algorithm 
-// 1. Create a Hashmap <string , vector<pair<int,string>>> Stores Key -> Vector(Pair(Timestamp , Value))
-// 2. Set -> Push the timestamp and value at the relevant key
-// 3. Get -> Check if the key exists in the Hashmap , if not return empty string
-// 4. Declare 2 variables start = 0 , end = n-1
-// 5. Implement Binary Search for the timestamp and return the relevant value
-// 6. If not exact find maintain an ans variable to store the closest value such ans < timestamp
-// 7. Return ans
-
 unordered_map<string, vector<pair<int, string>>> m;
     TimeMap() {}
 

@@ -1,20 +1,6 @@
 // Median of Two Sorted Arrays
 // https://leetcode.com/problems/median-of-two-sorted-arrays/description/
 
-// Algorithm 
-// 1. Create 2 variables n and m to store sizes of 2 vectors if(n>m) change the vectors as n should be lesser
-// 2. Create a total=n+m variable to store total elements 
-// 3. Create 2 variables start=0 and end=n as binary search bounds
-// 4. Create a variable ans=0.0 to store the median
-// 5. Initiate a loop till (start<=end)
-// 6. Create 2 variables i and j to determine partition in both arrays 
-// 7. Create 4 more variables to store the partition elements 
-// 8. Validate if the partition is correct 
-// 9. If yes -> find the median and break 
-// 10. Else check if left1 > right2 , if yes -> end = i-1 , if no -> start = i+1 
-
-// 11. Return ans
-
 double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         int n = nums1.size();
         int m = nums2.size();
