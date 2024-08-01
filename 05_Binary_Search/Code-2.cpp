@@ -1,11 +1,6 @@
 // Binary Search in 2-D Array
 // https://leetcode.com/problems/search-a-2d-matrix/
 
-// Algorithm 
-// 1. Use Binary Search to find the relevant row with column = 0 (Additional Check -> if element at matrix[mid][0] -> return true)
-// 2. Use Binary Search again with the relevant row to find the exact element
-// 3. If element not found -> return -1 
-
  bool searchMatrix(vector<vector<int>>& matrix, int target) {
         int startRow = 0;
         int endRow = matrix.size() - 1;     
